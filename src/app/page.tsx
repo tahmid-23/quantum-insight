@@ -4,7 +4,9 @@ import { Stack, Paper, Flex, Text } from "@mantine/core";
 export default function Page() {
   return (
     <Stack>
-      <Text size="xl">Welcome to Cornucopia.</Text>
+      <Text size="xl">
+        See for yourself how quantum computers are just <em>superior</em>.
+      </Text>
       <Paper>
         <Flex gap="lg" wrap="wrap">
           <ToolCard
