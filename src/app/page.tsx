@@ -14,6 +14,11 @@ export default function Page() {
             description="Learn just how fast quantum computers can be."
             href="/grover"
           />
+          <ToolCard
+            title="Quantum Progress"
+            description="How quickly is quantum development moving?"
+            href="/progress"
+          />
         </Flex>
       </Paper>
     </Stack>
