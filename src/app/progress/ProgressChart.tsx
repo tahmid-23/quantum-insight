@@ -13,10 +13,20 @@ import { useMantineTheme } from "@mantine/core";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title);
 
-export default function ProgressChart() {
-  const theme = useMantineTheme();
+export interface ProgressChartProps {
+  data: any[];
+  labels: number[];
+  title: string;
+  yTitle: string;
+}
 
-  const data = [27, 65, 127, 433, 1_121];
+export default function ProgressChart({
+  data,
+  labels,
+  title,
+  yTitle,
+}: ProgressChartProps) {
+  const theme = useMantineTheme();
 
   const animationDuration = 150;
 
@@ -24,7 +34,7 @@ export default function ProgressChart() {
     <div className="w-full h-80">
       <Line
         data={{
-          labels: [2019, 2020, 2021, 2022, 2023],
+          labels: labels,
           datasets: [
             {
               data: data,
@@ -63,12 +73,13 @@ export default function ProgressChart() {
           },
           plugins: {
             title: {
-              text: "Number of Qubits in IBM Computers",
+              text: title,
               display: true,
             },
           },
           scales: {
             x: {
+              type: "linear",
               title: {
                 text: "Year",
                 display: true,
@@ -76,7 +87,7 @@ export default function ProgressChart() {
             },
             y: {
               title: {
-                text: "# of Qubits",
+                text: yTitle,
                 display: true,
               },
             },
