@@ -19,6 +19,11 @@ export default function Page() {
             description="How quickly is quantum development moving?"
             href="/progress"
           />
+          <ToolCard
+            title="Circuit Fidelity"
+            description="How quickly do quantum computers become unstable?"
+            href="/fidelity"
+          />
         </Flex>
       </Paper>
     </Stack>
