@@ -15,17 +15,24 @@ export default function FidelityDemo() {
   return (
     <Stack className="w-fit">
       <Text size="xl">
-        Fidelity:{" "}
-        <span style={{ color: `rgb(${red}, ${green}, 0)` }}>{fidelity}</span>
+        Stability:{" "}
+        <span style={{ color: `rgb(${red}, ${green}, 0)` }}>
+          {100 * fidelity}%
+        </span>
       </Text>
-      <Text>Number of Qubits</Text>
+      <div>
+        <Text>Number of Qubits</Text>
+        <Text size="xs">
+          <i>The largest working modern quantum computer has 433 qubits.</i>
+        </Text>
+      </div>
       <Slider
         className="w-36"
         min={1}
-        max={1000}
+        max={433}
         marks={[
           { value: 1, label: "1" },
-          { value: 1000, label: "1000" },
+          { value: 433, label: "433" },
         ]}
         value={qubitCount}
         onChange={setQubitCount}
@@ -33,7 +40,6 @@ export default function FidelityDemo() {
       <Text>Circuit Depth</Text>
       <Slider
         className="w-36"
-        label="Circuit Depth"
         min={1}
         max={10}
         marks={[
